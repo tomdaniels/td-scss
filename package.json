@@ -1,0 +1,13 @@
+{
+  "name": "tdss",
+  "version": "1.0.0",
+  "description": "design library",
+  "main": "styles/main.scss",
+  "keywords": [
+    "scss",
+    "tdtele",
+    "library"
+  ],
+  "author": "tomdaniels",
+  "license": "ISC"
+}
