@@ -1,0 +1,90 @@
+@import "../variables/colours";
+@import "../animations/pop";
+
+@mixin btn-common($colour) {
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+  border: 2px solid darken(saturate($colour, 5%), 15%);
+  box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+  color: #282828;
+
+  &:not(:disabled) {
+    &:hover {
+      @include pop(1.02, 300ms);
+
+      &:active {
+        transform: scale(0.99);
+        box-shadow: none;
+      }
+    }
+  }
+
+  &:disabled {
+    box-shadow: none;
+  }
+}
+
+@mixin btn-solid($colour) {
+  @include btn-common($colour);
+  background-color: $colour;
+
+  @if $colour == palette(red, 500) {
+    color: $fg;
+    background-color: $colour;
+  }
+
+  &:not(:disabled) {
+    &:hover {
+      &:active {
+        background-color: darken($colour, 2%);
+      }
+
+      &:not(:active) {
+        background-color: lighten($colour, 5%);
+      }
+    }
+  }
+}
+
+@mixin btn-outline($colour) {
+  @include btn-common($colour);
+  color: darken($colour, 10%);
+  background-color: transparent;
+  border: 2px solid darken(saturate($colour, 5%), 20%);
+  
+  &:not(:disabled) {
+    &:hover {
+      color: saturate($colour, 15%);
+      border: 2px solid darken(saturate($colour, 5%), 10%);
+
+      &:active {
+        box-shadow: inset -1px -1px 2px 2px rgba(0, 0, 0, 0.25);
+        background-color: transparent;
+      }
+
+      &:not(:active) {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+@mixin link-base($colour) {
+  color: $colour;
+  background-color: transparent;
+
+  &:active {
+    color: darken($colour, 10%);
+  }
+  
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  &:hover:not(:active) {
+    color: lighten($colour, 15%);
+  }
+}
+
