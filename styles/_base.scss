@@ -10,9 +10,12 @@ Happy coding
 */
 
 @import "variables/colours";
+@import "variables/sizes";
+@import "variables/screen-sizes";
 
 @import "mixins/luminance";
 @import "mixins/theme";
 @import "mixins/btn";
+@import "mixins/_breakpoints";
 
 @import "animations/pop";
