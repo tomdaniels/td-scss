@@ -1,0 +1,110 @@
+// >==========================================|| background ||======================================<
+
+$bg: #282828;
+
+$bg-dim: #252423;
+$bg-0: #32302f;
+$bg-1: #3c3836;
+$bg-2: #46413e;
+$bg-3: #504945;
+$bg-4: #5b534d;
+
+$bg-diff-green: #3d4220;
+$bg-diff-green-soft: #424a3e;
+$bg-diff-red: #472322;
+$bd-diff-red-soft: #543937;
+$bg-diff-blue: #0f3a42;
+$bg-diff-blue-soft: #404946;
+$bg-diff-yellow-soft: #574833;
+
+$bg-current-word: #45403d;
+
+// >==========================================|| foreground ||======================================<
+
+$fg: #fbf1c7;
+$fg-0: #ebdbb2;
+$fg-1: #e7d7ad;
+$fg-2: #ddc7a1;
+$fg-3: #d4be98;
+$fg-4: #bdae93;
+$fg-5: #a89984;
+
+// >==========================================||  palette  ||=======================================<
+
+$all_colours: (
+  green: (
+    100: #dcdfc1,
+    200: #c5cb9b,
+    300: #a9b665,
+    400: #57641c,
+    500: #343d0d,
+  ),
+  yellow: (
+    100: #f1d9bc,
+    200: #e3c193,
+    300: #d8a657,
+    400: #7d570b,
+    500: #4e3402,
+  ),
+  red: (
+    100: #ffd0ca,
+    200: #fc948a,
+    300: #ea6962,
+    400: #a93535,
+    500: #6c1e1e,
+  ),
+  purple: (
+    100: #f4d5dc,
+    200: #eabac6,
+    300: #d3869b,
+    400: #8d495d,
+    500: #582b38,
+  ),
+  aqua: (
+    100: #cfe1dc,
+    200: #b0ccc6,
+    300: #7daea3,
+    400: #3a665d,
+    500: #213e38,
+  ),
+  orange: (
+    100: #fed4bd,
+    200: #f7b994,
+    300: #e78a4e,
+    400: #964912,
+    500: #5e2b06,
+  ),
+);
+
+@function palette($colour, $shade: 300) {
+  @if map-has-key($all_colours, $colour) {
+    @if map-has-key(map-get($all_colours, $colour), $shade) {
+      @return map-get(map-get($all_colours, $colour), $shade);
+    } @else {
+      @warn "Invalid shade `#{$shade}` for color `#{$color}`.";
+    }
+  } @else {
+    @warn "Invalid color `#{$color}`.";
+  }
+  @return null;
+}
+
+$green: palette(green);
+$yellow: palette(yellow);
+$red: palette(red);
+$purple: palette(purple);
+$aqua: palette(aqua);
+$orange: palette(orange);
+
+// >==========================================|| specialty palette ||===============================<
+
+$green-pre: #b2b625;
+$yellow-title: #d79920;
+
+// >==========================================||      shades       ||===============================<
+
+$grey-0: #504945;
+$grey-1: #665c54;
+$grey-2: #7c6f64;
+$grey-3: #928374;
+$grey-4: #a89984;
