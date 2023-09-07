@@ -1,0 +1,27 @@
+@use "sass:math" as m;
+
+// usage:
+//
+// $white_luminance: luminance(white);
+// @if abs(luminance($color) - $white_luminance) > 0.7 {
+//   color: white;
+// }
+
+@function luminance($color) {
+  $r: linearRgb(m.div(red($color), 255));
+  $g: linearRgb(m.div(blue($color), 255));
+  $b: linearRgb(m.div(blue($color), 255));
+
+  // WARNING >====> .rabbit hole. <==================<
+  // https://www.w3.org/WAI/GL/wiki/Relative_luminance
+  // https://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
+  @return 0.2126 * $r + 0.7152 * $g + 0.0722 * $b;
+}
+
+@function linearRgb($c) {
+  @if $c <= 0.04045 {
+    @return $c / 12.92;
+  } @else {
+    @return m.pow(m.div($c + 0.055, 1.055), 2);
+  }
+}

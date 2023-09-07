@@ -1,0 +1,38 @@
+@import "_luminance";
+
+@mixin theme($primary-color, $rotate: 120deg, $darkenpct: 20%) {
+  $tertiary-color: adjust-hue($primary-color, $rotate);
+  $quaternary-color: adjust-hue($primary-color, 180deg);
+  $secondary-color: adjust-hue($primary-color, -$rotate);
+
+  .primary {
+    @include btn-base($primary-color, 0);
+  }
+  .secondary {
+    @include btn-base($secondary-color);
+  }
+  .tertiary {
+    @include btn-base($tertiary-color);
+  }
+  .quaternary {
+    @include btn-base($quaternary-color);
+  }
+}
+
+$white_luminance: luminance(#fff);
+
+@mixin btn-base($bg, $darken_pct: 5%) {
+  background-color: darken($bg, $darken_pct);
+  border: 1px solid darken($bg, 20%);
+  /* luminance(#{$bg}): #{luminance($bg)}
+   * luminance(white): #{luminance(white)}
+  */
+  @if abs(luminance($bg) - $white_luminance) > 0.7 {
+    color: #eee;
+  }
+
+  &:hover {
+    box-shadow: 0px 5px 10px 0px darken($bg, 30%);
+    background: lighten(saturate($bg, 20%), 05);
+  }
+}
