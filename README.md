@@ -1,4 +1,4 @@
-# td-scss
+# td-scss ![npm-badge](https://badge.fury.io/js/td-scss.svg)
 
 A small collection mixins, variables and animations which address common concerns in my projects.
 
