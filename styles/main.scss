@@ -29,61 +29,24 @@ button {
 }
 
 h1 {
-  font-weight: 800;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: $fg-1;
   font-weight: 700;
-  margin: 0;
-  padding: 0;
-}
-
-ul {
-  padding: 0;
-  margin: 0;
 }
 
 h1 {
-  font-size: 5.6rem;
   letter-spacing: -0.05rem;
 }
 
-h2 {
-  font-size: 3.8rem;
-}
-
 h3 {
-  font-size: 3.2rem;
   letter-spacing: -0.032rem;
 }
 
-h4 {
-  font-size: 2.4rem;
-}
-
-h5 {
-  font-size: 1.8rem;
-}
-h6 {
-  font-size: 1.6rem;
-}
-
-label,
-pre,
-ul,
-li,
+// label,
+// pre,
+// ul,
+// li,
 p {
-  color: $fg-3;
   font-weight: 500;
   letter-spacing: -0.028rem;
-  font-size: 1.2rem;
-  line-height: 1.5;
 }
 
 li {
@@ -91,22 +54,7 @@ li {
 }
 
 a {
-  padding: 0;
-  margin: 0;
   text-decoration: none;
-}
-
-pre {
-  color: $green-pre;
-}
-
-hr {
-  margin: 3.2rem 0;
-  border: 1px solid $bg-2;
-  color: $fg-0;
-
-  display: flex;
-  align-self: stretch;
 }
 
 // >=============================|| general styles ||========================<
