@@ -1,0 +1,70 @@
+@import "base";
+
+// >=============================|| global styles ||========================<
+
+html {
+  box-sizing: border-box;
+  color-scheme: dark;
+}
+
+html,
+body {
+  background-color: $bg;
+}
+
+body,
+input,
+select,
+textarea,
+button {
+  font-family: "Rubik", "Plus Jakarta Sans", sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h1 {
+  letter-spacing: -0.05rem;
+}
+
+h3 {
+  letter-spacing: -0.032rem;
+}
+
+// label,
+// pre,
+// ul,
+// li,
+p {
+  font-weight: 500;
+  letter-spacing: -0.028rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+// >=============================|| general styles ||========================<
+
+button {
+  &:hover:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+  }
+}
